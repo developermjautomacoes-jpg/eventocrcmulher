@@ -700,6 +700,27 @@ ul {
     transform: translateY(0);
 }
 
+/* Fallback mobile: garante visibilidade mesmo sem JS */
+@media (max-width: 768px) {
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: mobileReveal 0.8s ease-out 0.3s forwards;
+    }
+    .fade-in.visible {
+        animation: none;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes mobileReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Palestrantes */
 .speaker-card {
     text-align: center;

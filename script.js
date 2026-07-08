@@ -1,25 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Animação de fade-in no scroll
+    // Animação de fade-in com IntersectionObserver (mais confiável no mobile)
     const fadeElements = document.querySelectorAll('.fade-in');
 
-    const checkVisibility = () => {
-        const triggerBottom = window.innerHeight * 0.85;
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-        fadeElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-
-            if (elementTop < triggerBottom) {
-                element.classList.add('visible');
-            }
-        });
-    };
-
-    // Executa no load
-    checkVisibility();
-
-    // Executa no scroll
-    window.addEventListener('scroll', checkVisibility);
+        fadeElements.forEach(el => observer.observe(el));
+    } else {
+        // Fallback: mostra todos os elementos se IntersectionObserver não for suportado
+        fadeElements.forEach(el => el.classList.add('visible'));
+    }
 
     // Header fixo muda de estilo ao scrolar
     const header = document.querySelector('.header');
