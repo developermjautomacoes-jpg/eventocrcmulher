@@ -54,4 +54,99 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ===================== Modal PIX Jantar =====================
+    const APPS_SCRIPT_URL = 'COLE_AQUI_A_URL_DO_APPS_SCRIPT'; // ← será preenchido após deploy
+    const PICPAY_URL = 'https://link.picpay.com/p/17837142896a5151f107656';
+
+    const modal        = document.getElementById('modal-pix');
+    const btnAbrirPix  = document.getElementById('btn-pix-jantar');
+    const btnFechar    = document.getElementById('modal-pix-close');
+    const formPix      = document.getElementById('form-pix');
+    const btnSubmit    = document.getElementById('btn-pix-submit');
+
+    // Abrir modal
+    btnAbrirPix.addEventListener('click', () => {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        document.getElementById('pix-nome').focus();
+    });
+
+    // Fechar modal
+    function fecharModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        formPix.reset();
+        document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
+    }
+    btnFechar.addEventListener('click', fecharModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) fecharModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharModal(); });
+
+    // Máscara CPF
+    document.getElementById('pix-cpf').addEventListener('input', function () {
+        let v = this.value.replace(/\D/g, '').slice(0, 11);
+        v = v.replace(/(\d{3})(\d)/, '$1.$2');
+        v = v.replace(/(\d{3})(\d)/, '$1.$2');
+        v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+        this.value = v;
+    });
+
+    // Máscara Telefone
+    document.getElementById('pix-telefone').addEventListener('input', function () {
+        let v = this.value.replace(/\D/g, '').slice(0, 11);
+        if (v.length <= 10) {
+            v = v.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+        } else {
+            v = v.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+        }
+        this.value = v;
+    });
+
+    // Envio do formulário
+    formPix.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const nome     = document.getElementById('pix-nome').value.trim();
+        const telefone = document.getElementById('pix-telefone').value.trim();
+        const cpf      = document.getElementById('pix-cpf').value.trim();
+
+        // Validação simples
+        let valido = true;
+        [['pix-nome', nome], ['pix-telefone', telefone], ['pix-cpf', cpf]].forEach(([id, val]) => {
+            const el = document.getElementById(id);
+            if (!val) { el.classList.add('input-error'); valido = false; }
+            else el.classList.remove('input-error');
+        });
+        if (!valido) return;
+
+        // Feedback no botão
+        btnSubmit.textContent = 'Enviando...';
+        btnSubmit.disabled = true;
+
+        // Enviar para o Google Sheets (fire-and-forget)
+        try {
+            await fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nome,
+                    telefone,
+                    cpf,
+                    ingresso: 'Jantar - Dia 24/09',
+                    data: new Date().toLocaleString('pt-BR')
+                })
+            });
+        } catch (_) {
+            // Mesmo com erro, redireciona para não bloquear o usuário
+        }
+
+        // Redirecionar para o PicPay
+        window.open(PICPAY_URL, '_blank');
+        fecharModal();
+        btnSubmit.textContent = 'Confirmar e ir para o PIX';
+        btnSubmit.disabled = false;
+    });
+
 });
+

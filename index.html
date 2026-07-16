@@ -332,9 +332,9 @@
                         <a href="https://www.sympla.com.br/evento/10-encontro-estadual-da-mulher-profissional-contabilista---jantar-de-networking/3505956" target="_blank" class="btn btn-primary w-100">
                             <i data-lucide="credit-card" style="width:16px;height:16px;margin-right:6px;"></i> Cartão de Crédito <small style="font-weight:400; opacity:0.85; margin-left:4px;">(com taxa)</small>
                         </a>
-                        <a href="https://link.picpay.com/p/17837142896a5151f107656" target="_blank" class="btn btn-primary w-100">
+                        <button id="btn-pix-jantar" class="btn btn-primary w-100" type="button">
                             <i data-lucide="qr-code" style="width:16px;height:16px;margin-right:6px;"></i> PIX <small style="font-weight:400; opacity:0.85; margin-left:4px;">(sem taxa)</small>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -436,6 +436,34 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal PIX Jantar -->
+    <div id="modal-pix" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-pix-title">
+        <div class="modal-box">
+            <button class="modal-close" id="modal-pix-close" aria-label="Fechar">&times;</button>
+            <div class="modal-icon">📲</div>
+            <h3 id="modal-pix-title">Inscrição via PIX</h3>
+            <p class="modal-subtitle">Preencha seus dados antes de prosseguir para o pagamento.</p>
+            <form id="form-pix" novalidate>
+                <div class="modal-field">
+                    <label for="pix-nome">Nome completo *</label>
+                    <input type="text" id="pix-nome" placeholder="Seu nome completo" required autocomplete="name">
+                </div>
+                <div class="modal-field">
+                    <label for="pix-telefone">Telefone / WhatsApp *</label>
+                    <input type="tel" id="pix-telefone" placeholder="(99) 99999-9999" required autocomplete="tel">
+                </div>
+                <div class="modal-field">
+                    <label for="pix-cpf">CPF *</label>
+                    <input type="text" id="pix-cpf" placeholder="000.000.000-00" maxlength="14" required>
+                </div>
+                <p class="modal-disclaimer">Seus dados serão usados apenas para emissão do comprovante de inscrição.</p>
+                <button type="submit" class="btn btn-primary w-100" id="btn-pix-submit">
+                    Confirmar e ir para o PIX
+                </button>
+            </form>
+        </div>
+    </div>
 
     <script>
         lucide.createIcons();
