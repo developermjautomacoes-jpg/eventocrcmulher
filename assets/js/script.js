@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===================== Modal PIX Jantar =====================
     const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-VxIsr0mwQBLto-4CJ1gxlwg5CBOYQER9fOmYrEpa_qRCdMJCIbEu9KP388deBjnd/exec';
-    const PICPAY_URL = 'https://link.picpay.com/p/17837142896a5151f107656';
+    const PICPAY_URL = 'https://link.picpay.com/p/17842976826a5a38d2ad4ae';
 
     const modal        = document.getElementById('modal-pix');
     const btnAbrirPix  = document.getElementById('btn-pix-jantar');
