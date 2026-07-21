@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // Animação de fade-in com IntersectionObserver (mais confiável no mobile)
     const fadeElements = document.querySelectorAll('.fade-in');
 
@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
+            if (targetId === '#') return;
 
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 // Considerar a altura do header
                 const headerHeight = document.querySelector('.header').offsetHeight;
@@ -58,11 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwoyBxYK0sOG4L0Xfb5C7EmO1vRg7lGLXsfJANfElOEDnLnDY-0RdGvpHQEmhmXPHJl/exec';
     const CHAVE_PIX = '116b8803-18bb-4dc9-b0a4-5f13d8f439e1';
 
-    const modal        = document.getElementById('modal-pix');
-    const btnAbrirPix  = document.getElementById('btn-pix-jantar');
-    const btnFechar    = document.getElementById('modal-pix-close');
-    const formPix      = document.getElementById('form-pix');
-    const btnSubmit    = document.getElementById('btn-pix-submit');
+    const modal = document.getElementById('modal-pix');
+    const btnAbrirPix = document.getElementById('btn-pix-jantar');
+    const btnFechar = document.getElementById('modal-pix-close');
+    const formPix = document.getElementById('form-pix');
+    const btnSubmit = document.getElementById('btn-pix-submit');
 
     // Abrir modal
     btnAbrirPix.addEventListener('click', () => {
@@ -110,10 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
     formPix.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const nome     = document.getElementById('pix-nome').value.trim();
+        const nome = document.getElementById('pix-nome').value.trim();
         const telefone = document.getElementById('pix-telefone').value.trim();
-        const cpf      = document.getElementById('pix-cpf').value.trim();
-        const email    = document.getElementById('pix-email').value.trim();
+        const cpf = document.getElementById('pix-cpf').value.trim();
+        const email = document.getElementById('pix-email').value.trim();
 
         // Validação simples
         let valido = true;
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     telefone,
                     cpf,
                     email,
-                    ingresso: 'Jantar - Dia 24/09',
+                    ingresso: 'Jantar de Networking: Contadoras na Liderança - Dia 24/09 | 18hs',
                     data: new Date().toLocaleString('pt-BR')
                 })
             });
