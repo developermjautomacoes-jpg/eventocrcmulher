@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ===================== Modal PIX Jantar =====================
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-VxIsr0mwQBLto-4CJ1gxlwg5CBOYQER9fOmYrEpa_qRCdMJCIbEu9KP388deBjnd/exec';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwoyBxYK0sOG4L0Xfb5C7EmO1vRg7lGLXsfJANfElOEDnLnDY-0RdGvpHQEmhmXPHJl/exec';
     const CHAVE_PIX = '116b8803-18bb-4dc9-b0a4-5f13d8f439e1';
 
     const modal        = document.getElementById('modal-pix');
