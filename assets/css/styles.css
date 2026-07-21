@@ -1022,8 +1022,105 @@ ul {
     line-height: 1.5;
 }
 
+/* ===== PIX Reveal ===== */
+.pix-reveal {
+    text-align: center;
+    padding: 8px 0 4px;
+    animation: fadeInUp 0.4s ease;
+}
+
+.pix-reveal-icon {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+}
+
+.pix-reveal-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.pix-reveal-desc {
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.pix-key-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, rgba(138,21,56,0.06), rgba(212,175,55,0.08));
+    border: 2px solid var(--color-primary);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+}
+
+#pix-key-value {
+    flex: 1;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    word-break: break-all;
+    text-align: left;
+    letter-spacing: 0.3px;
+}
+
+.btn-copy {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.btn-copy:hover {
+    background: var(--color-primary-dark);
+    transform: scale(1.04);
+}
+
+.btn-copy svg {
+    width: 15px;
+    height: 15px;
+}
+
+.pix-copy-feedback {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2d8a4e;
+    margin-top: 4px;
+    animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 480px) {
     .modal-box {
         padding: 32px 24px 28px;
+    }
+
+    .pix-key-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-copy {
+        justify-content: center;
     }
 }

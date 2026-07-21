@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===================== Modal PIX Jantar =====================
     const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby-VxIsr0mwQBLto-4CJ1gxlwg5CBOYQER9fOmYrEpa_qRCdMJCIbEu9KP388deBjnd/exec';
-    const PICPAY_URL = 'https://link.picpay.com/p/17842976826a5a38d2ad4ae';
+    const CHAVE_PIX = '116b8803-18bb-4dc9-b0a4-5f13d8f439e1';
 
     const modal        = document.getElementById('modal-pix');
     const btnAbrirPix  = document.getElementById('btn-pix-jantar');
@@ -77,6 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
         formPix.reset();
         document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
+        // Resetar para o estado inicial (formulário visível, PIX oculto)
+        formPix.style.display = '';
+        document.getElementById('pix-reveal').style.display = 'none';
+        document.getElementById('pix-copy-feedback').style.display = 'none';
     }
     btnFechar.addEventListener('click', fecharModal);
     modal.addEventListener('click', (e) => { if (e.target === modal) fecharModal(); });
@@ -109,10 +113,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const nome     = document.getElementById('pix-nome').value.trim();
         const telefone = document.getElementById('pix-telefone').value.trim();
         const cpf      = document.getElementById('pix-cpf').value.trim();
+        const email    = document.getElementById('pix-email').value.trim();
 
         // Validação simples
         let valido = true;
-        [['pix-nome', nome], ['pix-telefone', telefone], ['pix-cpf', cpf]].forEach(([id, val]) => {
+        [['pix-nome', nome], ['pix-telefone', telefone], ['pix-cpf', cpf], ['pix-email', email]].forEach(([id, val]) => {
             const el = document.getElementById(id);
             if (!val) { el.classList.add('input-error'); valido = false; }
             else el.classList.remove('input-error');
@@ -133,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     nome,
                     telefone,
                     cpf,
+                    email,
                     ingresso: 'Jantar - Dia 24/09',
                     data: new Date().toLocaleString('pt-BR')
                 })
@@ -141,11 +147,24 @@ document.addEventListener('DOMContentLoaded', () => {
             // Mesmo com erro, redireciona para não bloquear o usuário
         }
 
-        // Redirecionar para o PicPay
-        window.open(PICPAY_URL, '_blank');
-        fecharModal();
-        btnSubmit.textContent = 'Confirmar e ir para o PIX';
+        // Exibir a chave PIX dentro do modal
+        document.getElementById('pix-key-value').textContent = CHAVE_PIX;
+        formPix.style.display = 'none';
+        const pixReveal = document.getElementById('pix-reveal');
+        pixReveal.style.display = 'block';
+        lucide.createIcons(); // Reativa os ícones no novo conteúdo
+
+        btnSubmit.textContent = 'Confirmar e ver a chave PIX';
         btnSubmit.disabled = false;
+
+        // Botão copiar chave PIX
+        document.getElementById('btn-copiar-pix').addEventListener('click', () => {
+            navigator.clipboard.writeText(CHAVE_PIX).then(() => {
+                const feedback = document.getElementById('pix-copy-feedback');
+                feedback.style.display = 'block';
+                setTimeout(() => { feedback.style.display = 'none'; }, 2500);
+            });
+        });
     });
 
 });

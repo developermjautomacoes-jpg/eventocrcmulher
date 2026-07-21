@@ -457,11 +457,30 @@
                     <label for="pix-cpf">CPF *</label>
                     <input type="text" id="pix-cpf" placeholder="000.000.000-00" maxlength="14" required>
                 </div>
+                <div class="modal-field">
+                    <label for="pix-email">E-mail *</label>
+                    <input type="email" id="pix-email" placeholder="seu@email.com" required autocomplete="email">
+                </div>
                 <p class="modal-disclaimer">Seus dados serão usados apenas para emissão do comprovante de inscrição.</p>
                 <button type="submit" class="btn btn-primary w-100" id="btn-pix-submit">
-                    Confirmar e ir para o PIX
+                    Confirmar e ver a chave PIX
                 </button>
             </form>
+
+            <!-- Chave PIX (exibida após envio) -->
+            <div id="pix-reveal" class="pix-reveal" style="display:none;">
+                <div class="pix-reveal-icon">✅</div>
+                <h4 class="pix-reveal-title">Dados recebidos! Agora faça o PIX</h4>
+                <p class="pix-reveal-desc">Copie a chave abaixo e realize o pagamento de <strong>R$ 200,00</strong>. Após o pagamento, envie o comprovante pelo WhatsApp.</p>
+                <div class="pix-key-box">
+                    <span id="pix-key-value">CHAVE_PIX_AQUI</span>
+                    <button id="btn-copiar-pix" class="btn-copy" title="Copiar chave PIX">
+                        <i data-lucide="copy"></i>
+                        <span>Copiar</span>
+                    </button>
+                </div>
+                <p id="pix-copy-feedback" class="pix-copy-feedback" style="display:none;">✔ Chave copiada!</p>
+            </div>
         </div>
     </div>
 
