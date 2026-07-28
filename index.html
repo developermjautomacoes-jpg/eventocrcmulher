@@ -167,8 +167,9 @@
                             <h4>Bloco 2: Os 3 Pilares da Contabilidade</h4>
                             <p>Na Era da Reforma Tributária. Desafios e posicionamento em cada área.</p>
                             <div class="speakers">
-                                <strong>Dep. Pessoal:</strong> Ariane | <strong>Fiscal:</strong> Thabata |
-                                <strong>Contábil:</strong> Prof. Stephani Kalynka <br>
+                                <strong>Dep. Pessoal:</strong> Ariane | 
+                                <!-- <strong>Fiscal:</strong> Thabata | -->
+                                <strong>Contábil:</strong> Stephani Kalynka <br>
                                 <strong>Mediação:</strong> Karina
                             </div>
                         </div>
@@ -187,7 +188,7 @@
                             <h4>Bloco 3: Reforma na Prática</h4>
                             <p>O impacto na vida real da contadora, rotina e escritórios.</p>
                             <div class="speakers">
-                                <strong>Painel:</strong> Renata Santana, Jack Pontual, Kalyne <br>
+                                <strong>Painel:</strong> Jack Pontual e Kalyne <br>
                                 <strong>Mediação:</strong> Cleide
                             </div>
                         </div>
@@ -199,7 +200,7 @@
                             <h4>Bloco 4: Decisão de Carreira e Posicionamento</h4>
                             <p>Caminhos possíveis na contabilidade e construção de autoridade.</p>
                             <div class="speakers">
-                                <strong>Painel:</strong> Ioná, Kamilla Zamprogno, Dorgivania<br>
+                                <strong>Painel:</strong> Ioná, Dorgivania e Cristiane Nicomedes<br>
                                 <strong>Mediação:</strong> Cintia
                             </div>
                         </div>
@@ -275,32 +276,199 @@
                 <p>Grandes nomes que guiarão a nossa trilha.</p>
             </div>
 
-            <div class="cards-grid">
-                <!-- Speaker Card Placeholder -->
-                <div class="card speaker-card fade-in">
-                    <div class="speaker-img-placeholder">
-                        <i data-lucide="image"></i>
+            <!-- Carrossel de Palestrantes -->
+            <div class="speakers-carousel-wrapper fade-in">
+                <!-- Seta Esquerda -->
+                <button class="carousel-arrow carousel-arrow-prev" id="carousel-prev" aria-label="Palestrante anterior">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+
+                <div class="speakers-carousel-viewport" id="speakers-carousel">
+                    <div class="speakers-carousel-track" id="carousel-track">
+
+                        <!-- Card 1 -->
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html#jani-valenca" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/Jani Valença.jpeg" alt="Jani Valença" class="speaker-img">
+                                </div>
+                                <h3>Jani Valença</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html#dani-dornelas" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/Foto Dani. Dornelas.jpg" alt="Dani Dornelas" class="speaker-img">
+                                </div>
+                                <h3>Dani Dornelas</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html#ariane-da-penha" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/Ariane da Penha Mendonça.jpeg" alt="Ariane Mendonça" class="speaker-img">
+                                </div>
+                                <h3>Ariane Mendonça</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
+
+                        <!-- Card 4 – AGUARDANDO FOTO (descomentar quando receber)
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/em_breve.jpg" alt="Stephanie Kalynka" class="speaker-img">
+                                </div>
+                                <h3>Stephanie Kalynka</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
+                        -->
+
+                        <!-- Card 5 -->
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html#cristiane-nicomedes" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/Cristiane Nicomedes.jpeg" alt="Cristiane Nicomedes" class="speaker-img">
+                                </div>
+                                <h3>Cristiane Nicomedes</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
+
+                        <!-- Cards 6 a 12 – AGUARDANDO FOTO (descomentar quando receber)
+
+                        Card 6 – Raquel
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html#raquel" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/em_breve.jpg" alt="Raquel" class="speaker-img">
+                                </div>
+                                <h3>Raquel</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
+
+                        Card 7 – Thayanne
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html#thayanne" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/em_breve.jpg" alt="Thayanne" class="speaker-img">
+                                </div>
+                                <h3>Thayanne</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
+
+                        Card 8 – Monique Jesus
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html#monique-jesus" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/em_breve.jpg" alt="Monique Jesus" class="speaker-img">
+                                </div>
+                                <h3>Monique Jesus</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
+
+                        Card 9 – Jack Pontual
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html#jack-pontual" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/em_breve.jpg" alt="Jack Pontual" class="speaker-img">
+                                </div>
+                                <h3>Jack Pontual</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
+
+                        Card 10 – Kalyne
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html#kalyne" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/em_breve.jpg" alt="Kalyne" class="speaker-img">
+                                </div>
+                                <h3>Kalyne</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
+
+                        Card 11 – Ioná
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html#iona" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/em_breve.jpg" alt="Ioná" class="speaker-img">
+                                </div>
+                                <h3>Ioná</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
+
+                        Card 12 – Dorgivania
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html#dorgivania" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/em_breve.jpg" alt="Dorgivania" class="speaker-img">
+                                </div>
+                                <h3>Dorgivania</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
+                        -->
+
+                        <!-- Card 13 -->
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html#debora-carrico" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/Debora Carriço (Mediadora).jpeg" alt="Debora Carriço" class="speaker-img">
+                                </div>
+                                <h3>Debora Carriço</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
+
+                        <!-- Card 14 -->
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html#thayanne-braz" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/Thayanne Braz.jpeg" alt="Thayanne Braz" class="speaker-img">
+                                </div>
+                                <h3>Thayanne Braz</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
                     </div>
-                    <h3>Jani Valença</h3>
-                    <p>Posicionamento na Liderança</p>
+
                 </div>
-                <!-- Speaker Card Placeholder -->
-                <div class="card speaker-card fade-in" style="transition-delay: 0.2s">
-                    <div class="speaker-img-placeholder">
-                        <i data-lucide="image"></i>
-                    </div>
-                    <h3>Dani Dornelas</h3>
-                    <p>Sucessão na Contabilidade</p>
-                </div>
-                <!-- Speaker Card Placeholder -->
-                <div class="card speaker-card fade-in" style="transition-delay: 0.4s">
-                    <div class="speaker-img-placeholder">
-                        <i data-lucide="image"></i>
-                    </div>
-                    <h3>Nome a confirmar</h3>
-                    <p>Tema da Palestra</p>
-                </div>
+
+                <!-- Seta Direita -->
+                <button class="carousel-arrow carousel-arrow-next" id="carousel-next" aria-label="Próximo palestrante">
+                    <i data-lucide="chevron-right"></i>
+                </button>
             </div>
+
+            <!-- Indicadores (bolinhas) -->
+            <div class="carousel-dots" id="carousel-dots"></div>
         </div>
     </section>
 
@@ -329,11 +497,14 @@
                         <li><i data-lucide="check"></i> Ambiente intimista</li>
                     </ul>
                     <div style="display: flex; flex-direction: column; gap: 10px;">
-                        <a href="https://www.sympla.com.br/evento/10-encontro-estadual-da-mulher-profissional-contabilista---jantar-de-networking/3505956" target="_blank" class="btn btn-primary w-100">
-                            <i data-lucide="credit-card" style="width:16px;height:16px;margin-right:6px;"></i> Cartão de Crédito <small style="font-weight:400; opacity:0.85; margin-left:4px;">(com taxa)</small>
+                        <a href="https://www.sympla.com.br/evento/10-encontro-estadual-da-mulher-profissional-contabilista---jantar-de-networking/3505956"
+                            target="_blank" class="btn btn-primary w-100">
+                            <i data-lucide="credit-card" style="width:16px;height:16px;margin-right:6px;"></i> Cartão de
+                            Crédito <small style="font-weight:400; opacity:0.85; margin-left:4px;">(com taxa)</small>
                         </a>
                         <button id="btn-pix-jantar" class="btn btn-primary w-100" type="button">
-                            <i data-lucide="qr-code" style="width:16px;height:16px;margin-right:6px;"></i> PIX <small style="font-weight:400; opacity:0.85; margin-left:4px;">(sem taxa)</small>
+                            <i data-lucide="qr-code" style="width:16px;height:16px;margin-right:6px;"></i> PIX <small
+                                style="font-weight:400; opacity:0.85; margin-left:4px;">(sem taxa)</small>
                         </button>
                     </div>
                 </div>
@@ -361,7 +532,7 @@
         </div>
     </section>
 
-    <!-- Patrocinadores -->
+    <!-- Patrocinadores 
     <section id="patrocinadores" class="section sponsors-section bg-light">
         <div class="container">
             <div class="section-header fade-in">
@@ -370,13 +541,13 @@
             </div>
 
             <div class="sponsors-grid fade-in">
-                <!-- Espaço reservado para patrocinadores -->
+                 Espaço reservado para patrocinadores 
                 <p style="color: var(--color-text-light); font-style: italic;">Espaço reservado para os patrocinadores
                     do evento.</p>
             </div>
         </div>
     </section>
-
+-->
     <!-- Realização -->
     <section class="section fade-in" style="padding-top: 0; padding-bottom: 100px;">
         <div class="container" style="text-align: center;">
@@ -394,7 +565,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Rodapé -->
     <footer class="footer">
         <div class="container footer-container">
             <div class="footer-info">
@@ -403,9 +574,11 @@
             </div>
             <div class="footer-links">
                 <h4>Links Rápidos</h4>
-                <a href="#sobre">Sobre</a>
-                <a href="#programacao">Programação</a>
-                <a href="#ingressos">Inscrição</a>
+                <a href="index.html">Início</a>
+                <a href="index.html#programacao">Programação</a>
+                <a href="index.html#ingressos">Inscrição</a>
+                <a href="politica-de-privacidade.html">Política de Privacidade</a>
+                <a href="termos-de-uso.html">Termos de Uso</a>
             </div>
             <div class="footer-social">
                 <h4>Siga-nos</h4>
@@ -424,7 +597,7 @@
         <div class="footer-bottom">
             <div class="container"
                 style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
-                <p style="margin: 0;">&copy; 2026 CRC ES. Todos os direitos reservados.</p>
+                <p style="margin: 0;">&copy; 2026 Comissão da Mulher CRC/ES. Todos os direitos reservados.</p>
                 <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
                     <span style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.5);">Desenvolvido por</span>
                     <a href="https://www.instagram.com/moniquecoelho.tech" target="_blank" rel="noopener noreferrer">
@@ -461,7 +634,7 @@
                     <label for="pix-email">E-mail *</label>
                     <input type="email" id="pix-email" placeholder="seu@email.com" required autocomplete="email">
                 </div>
-                <p class="modal-disclaimer">Seus dados serão usados apenas para emissão do comprovante de inscrição.</p>
+                <p class="modal-disclaimer">Seus dados serão usados apenas para emissão do comprovante de inscrição, em conformidade com nossa <a href="politica-de-privacidade.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Política de Privacidade</a> e <a href="termos-de-uso.html" target="_blank" style="color: var(--color-primary); text-decoration: underline;">Termos de Uso</a>.</p>
                 <button type="submit" class="btn btn-primary w-100" id="btn-pix-submit">
                     Confirmar e ver a chave PIX
                 </button>
@@ -471,7 +644,9 @@
             <div id="pix-reveal" class="pix-reveal" style="display:none;">
                 <div class="pix-reveal-icon">✅</div>
                 <h4 class="pix-reveal-title">Dados recebidos! Agora faça o PIX</h4>
-                <p class="pix-reveal-desc">Copie a chave abaixo e realize o pagamento de <strong>R$ 200,00</strong>. Assim que o pagamento for confirmado, você receberá um <strong>e-mail de confirmação</strong> da sua inscrição.</p>
+                <p class="pix-reveal-desc">Copie a chave abaixo e realize o pagamento de <strong>R$ 200,00</strong>.
+                    Assim que o pagamento for confirmado, você receberá um <strong>e-mail de confirmação</strong> da sua
+                    inscrição.</p>
                 <div class="pix-key-box">
                     <span id="pix-key-value">CHAVE_PIX_AQUI</span>
                     <button id="btn-copiar-pix" class="btn-copy" title="Copiar chave PIX">

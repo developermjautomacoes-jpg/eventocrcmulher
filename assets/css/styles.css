@@ -1124,3 +1124,150 @@ ul {
         justify-content: center;
     }
 }
+
+/* ===================== Carrossel de Palestrantes ===================== */
+.speakers-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 8px;
+}
+
+.speakers-carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.speakers-carousel-track {
+    display: flex;
+    gap: 32px;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    padding: 16px 4px 24px;
+    width: max-content;
+}
+
+.carousel-slide {
+    flex-shrink: 0;
+    min-width: 0;
+}
+
+/* Card dentro do slide: padroniza a altura da imagem */
+.carousel-slide .speaker-card {
+    height: 100%;
+}
+
+.carousel-slide .speaker-img-container {
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.carousel-slide .speaker-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 12px;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.carousel-slide .speaker-card:hover .speaker-img {
+    transform: scale(1.04);
+}
+
+/* Setas de navegação */
+.carousel-arrow {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    background: var(--color-white);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 14px rgba(138, 21, 56, 0.18);
+    z-index: 2;
+}
+
+.carousel-arrow svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 2.5;
+}
+
+.carousel-arrow:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(138, 21, 56, 0.4);
+}
+
+.carousel-arrow:active {
+    transform: scale(0.95);
+}
+
+.carousel-arrow:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Bolinhas indicadoras */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-border);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background: var(--color-primary);
+    transform: scale(1.35);
+    box-shadow: 0 0 0 3px rgba(138, 21, 56, 0.18);
+}
+
+.carousel-dot:hover:not(.active) {
+    background: var(--color-accent);
+    transform: scale(1.2);
+}
+
+/* Responsividade do carrossel — largura definida via JS */
+@media (max-width: 640px) {
+    .carousel-slide {
+        /* largura sobrescrita via JS */
+    }
+
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-arrow svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .speakers-carousel-wrapper {
+        gap: 8px;
+        padding: 0;
+    }
+}

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade – 10º Encontro da Mulher Profissional da Contabilidade ES</title>
+    <meta name="description"
+        content="Política de Privacidade do 10º Encontro da Mulher Profissional da Contabilidade do Espírito Santo. Saiba como seus dados são coletados, usados e protegidos.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* ── Página de conteúdo legal ── */
+        .legal-hero {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 60%, var(--color-accent) 100%);
+            padding: 100px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .legal-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .legal-hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .legal-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: var(--color-secondary-light);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .legal-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            color: #fff;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .legal-hero p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1rem;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* ── Conteúdo ── */
+        .legal-content {
+            padding: 80px 0 100px;
+            background: var(--color-bg);
+        }
+
+        .legal-wrapper {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Sumário lateral fixo (desktop) */
+        .legal-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 48px;
+            align-items: start;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .legal-toc {
+            position: sticky;
+            top: 100px;
+            background: var(--color-white);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--color-secondary);
+        }
+
+        .legal-toc h3 {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            margin-bottom: 16px;
+        }
+
+        .legal-toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+            padding: 0;
+        }
+
+        .legal-toc ol li {
+            counter-increment: toc-counter;
+            margin-bottom: 10px;
+        }
+
+        .legal-toc ol li a {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            transition: var(--transition);
+            line-height: 1.4;
+        }
+
+        .legal-toc ol li a::before {
+            content: counter(toc-counter) '.';
+            color: var(--color-secondary);
+            font-weight: 700;
+            min-width: 20px;
+            flex-shrink: 0;
+        }
+
+        .legal-toc ol li a:hover {
+            color: var(--color-primary);
+        }
+
+        /* Artigo */
+        .legal-article {
+            background: var(--color-white);
+            border-radius: 20px;
+            padding: 56px 52px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .legal-article .update-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(138, 21, 56, 0.07);
+            border: 1px solid rgba(138, 21, 56, 0.15);
+            color: var(--color-primary);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        .legal-article section {
+            margin-bottom: 48px;
+            scroll-margin-top: 110px;
+        }
+
+        .legal-article h2 {
+            font-family: var(--font-heading);
+            font-size: 1.45rem;
+            color: var(--color-primary-dark);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .legal-article h2 .section-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            color: #fff;
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .legal-article p {
+            color: var(--color-text);
+            line-height: 1.8;
+            margin-bottom: 14px;
+            font-size: 0.97rem;
+        }
+
+        .legal-article ul {
+            list-style: none;
+            padding: 0;
+            margin: 14px 0 14px 8px;
+        }
+
+        .legal-article ul li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 10px;
+            color: var(--color-text);
+            font-size: 0.97rem;
+            line-height: 1.7;
+        }
+
+        .legal-article ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--color-secondary);
+        }
+
+        .legal-article .highlight-box {
+            background: linear-gradient(135deg, rgba(138, 21, 56, 0.05), rgba(183, 110, 121, 0.05));
+            border-left: 4px solid var(--color-primary);
+            border-radius: 0 12px 12px 0;
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .legal-article .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+
+        .legal-article a {
+            color: var(--color-primary);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: var(--transition);
+        }
+
+        .legal-article a:hover {
+            color: var(--color-primary-dark);
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--color-border);
+            margin: 48px 0;
+        }
+
+        /* ── Responsivo ── */
+        @media (max-width: 900px) {
+            .legal-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .legal-toc {
+                position: static;
+                display: none; /* esconde no mobile para não ocupar espaço */
+            }
+
+            .legal-article {
+                padding: 36px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="assets/images/logo-crc.jpg" alt="Logo CRC ES" class="logo-img">
+                <img src="assets/images/logo-mulher.png" alt="Logo CRC Mulher" class="logo-img">
+            </div>
+            <nav class="nav">
+                <a href="index.html">Início</a>
+                <a href="index.html#sobre">A Experiência</a>
+                <a href="index.html#programacao">A Trilha</a>
+                <a href="index.html#ingressos" class="btn btn-primary btn-small">Comprar Ingresso</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="legal-hero">
+        <div class="container legal-hero-content">
+            <span class="legal-badge"><i class="fa-solid fa-shield-halved"></i> Documento Legal</span>
+            <h1>Política de Privacidade</h1>
+            <p>Transparência sobre como coletamos, usamos e protegemos seus dados pessoais.</p>
+        </div>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="legal-content">
+        <div class="legal-layout">
+
+            <!-- Sumário -->
+            <aside class="legal-toc">
+                <h3>Sumário</h3>
+                <ol>
+                    <li><a href="#s1">Identificação do Controlador</a></li>
+                    <li><a href="#s2">Dados Coletados</a></li>
+                    <li><a href="#s3">Finalidade do Tratamento</a></li>
+                    <li><a href="#s4">Base Legal (LGPD)</a></li>
+                    <li><a href="#s5">Compartilhamento de Dados</a></li>
+                    <li><a href="#s6">Armazenamento e Segurança</a></li>
+                    <li><a href="#s7">Seus Direitos</a></li>
+                    <li><a href="#s8">Cookies</a></li>
+                    <li><a href="#s9">Links Externos</a></li>
+                    <li><a href="#s10">Alterações desta Política</a></li>
+                    <li><a href="#s11">Contato</a></li>
+                </ol>
+            </aside>
+
+            <!-- Artigo principal -->
+            <article class="legal-article">
+
+                <span class="update-note">
+                    <i class="fa-regular fa-clock"></i> Última atualização: julho de 2026
+                </span>
+
+                <section id="s1">
+                    <h2><span class="section-num">1</span> Identificação do Controlador</h2>
+                    <p>
+                        Esta Política de Privacidade aplica-se ao evento <strong>10º Encontro da Mulher Profissional da
+                        Contabilidade – Espírito Santo</strong>, organizado pelo <strong>Conselho Regional de
+                        Contabilidade do Espírito Santo (CRC-ES)</strong>, por meio da Comissão CRC Mulher ES.
+                    </p>
+                    <div class="highlight-box">
+                        <p>Ao preencher o formulário de inscrição ou navegar neste site, você concorda com os termos
+                            desta Política, em conformidade com a <strong>Lei nº 13.709/2018 (LGPD)</strong>.</p>
+                    </div>
+                </section>
+
+                <hr class="divider">
+
+                <section id="s2">
+                    <h2><span class="section-num">2</span> Dados Coletados</h2>
+                    <p>Coletamos apenas os dados estritamente necessários para a realização do evento:</p>
+                    <ul>
+                        <li><strong>Nome completo</strong> – para identificação e emissão de credencial.</li>
+                        <li><strong>CPF</strong> – para emissão de comprovante de pagamento e controle de vagas.</li>
+                        <li><strong>E-mail</strong> – para envio de confirmação de inscrição e comunicados do evento.</li>
+                        <li><strong>Telefone / WhatsApp</strong> – para contato em caso de dúvidas ou imprevistos.</li>
+                        <li><strong>Dados de navegação</strong> – endereço IP, tipo de navegador e páginas acessadas,
+                            coletados automaticamente via cookies técnicos.</li>
+                    </ul>
+                </section>
+
+                <hr class="divider">
+
+                <section id="s3">
+                    <h2><span class="section-num">3</span> Finalidade do Tratamento</h2>
+                    <p>Seus dados são utilizados exclusivamente para:</p>
+                    <ul>
+                        <li>Processamento e confirmação da inscrição no evento.</li>
+                        <li>Comunicação sobre programação, palestrantes e informações logísticas.</li>
+                        <li>Emissão de comprovante de pagamento e certificado de participação.</li>
+                        <li>Cumprimento de obrigações legais e regulatórias do CRC-ES.</li>
+                        <li>Envio de informações sobre eventos futuros da CRC Mulher ES, desde que você não solicite
+                            cancelamento.</li>
+                    </ul>
+                </section>
+
+                <hr class="divider">
+
+                <section id="s4">
+                    <h2><span class="section-num">4</span> Base Legal (LGPD)</h2>
+                    <p>O tratamento dos seus dados pessoais está fundamentado nas seguintes bases legais previstas no
+                        art. 7º da LGPD:</p>
+                    <ul>
+                        <li><strong>Execução de contrato</strong> (art. 7º, V) – para processar sua inscrição e
+                            garantir sua participação no evento.</li>
+                        <li><strong>Legítimo interesse</strong> (art. 7º, IX) – para envio de comunicações relevantes
+                            relacionadas ao evento e às atividades da CRC Mulher ES.</li>
+                        <li><strong>Cumprimento de obrigação legal</strong> (art. 7º, II) – para atender às exigências
+                            normativas do Conselho Federal de Contabilidade e legislação vigente.</li>
+                        <li><strong>Consentimento</strong> (art. 7º, I) – para envio de materiais e comunicações
+                            futuras, sempre com opção de revogação.</li>
+                    </ul>
+                </section>
+
+                <hr class="divider">
+
+                <section id="s5">
+                    <h2><span class="section-num">5</span> Compartilhamento de Dados</h2>
+                    <p>Seus dados <strong>não são vendidos</strong> nem cedidos a terceiros para fins comerciais.
+                        Podemos compartilhá-los apenas nos seguintes casos:</p>
+                    <ul>
+                        <li><strong>Prestadores de serviço</strong> – plataformas de e-mail transacional e gestão de
+                            inscrições, vinculados por acordos de confidencialidade.</li>
+                        <li><strong>Obrigação legal</strong> – quando exigido por autoridade competente ou determinação
+                            judicial.</li>
+                        <li><strong>Parceiros institucionais do evento</strong> – somente nome e área de atuação, para
+                            fins de credenciamento, com seu consentimento prévio.</li>
+                    </ul>
+                </section>
+
+                <hr class="divider">
+
+                <section id="s6">
+                    <h2><span class="section-num">6</span> Armazenamento e Segurança</h2>
+                    <p>
+                        Seus dados são armazenados em servidores seguros, com acesso restrito a colaboradores
+                        autorizados pelo CRC-ES. Adotamos medidas técnicas e organizacionais compatíveis com as boas
+                        práticas de segurança da informação para prevenir acesso não autorizado, perda ou destruição
+                        dos dados.
+                    </p>
+                    <p>
+                        Os dados pessoais coletados para fins do evento serão mantidos por até <strong>5 (cinco)
+                        anos</strong> após a realização do evento, conforme exigências legais, e então descartados de
+                        forma segura.
+                    </p>
+                </section>
+
+                <hr class="divider">
+
+                <section id="s7">
+                    <h2><span class="section-num">7</span> Seus Direitos (LGPD)</h2>
+                    <p>Na qualidade de titular dos dados, você tem os seguintes direitos assegurados pelo art. 18 da
+                        LGPD:</p>
+                    <ul>
+                        <li><strong>Acesso</strong> – solicitar confirmação e cópia dos seus dados tratados.</li>
+                        <li><strong>Correção</strong> – pedir a atualização ou retificação de dados incompletos ou
+                            inexatos.</li>
+                        <li><strong>Anonimização, bloqueio ou eliminação</strong> – de dados desnecessários ou tratados
+                            em desconformidade com a LGPD.</li>
+                        <li><strong>Portabilidade</strong> – solicitar a transferência dos seus dados a outro
+                            fornecedor.</li>
+                        <li><strong>Revogação do consentimento</strong> – a qualquer momento, para as hipóteses
+                            baseadas em consentimento.</li>
+                        <li><strong>Oposição</strong> – ao tratamento realizado com fundamento em legítimo
+                            interesse.</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <p>Para exercer seus direitos, entre em contato pelo e-mail indicado na seção 11 desta
+                            Política. Responderemos no prazo máximo de 15 dias úteis.</p>
+                    </div>
+                </section>
+
+                <hr class="divider">
+
+                <section id="s8">
+                    <h2><span class="section-num">8</span> Cookies</h2>
+                    <p>
+                        Este site utiliza apenas <strong>cookies técnicos</strong> e <strong>cookies de
+                        desempenho</strong> necessários ao funcionamento correto das páginas. Não utilizamos cookies
+                        de rastreamento para fins publicitários de terceiros.
+                    </p>
+                    <ul>
+                        <li><strong>Cookies técnicos</strong> – essenciais para navegação e funcionamento do site.</li>
+                        <li><strong>Cookies de sessão</strong> – expiram ao fechar o navegador.</li>
+                    </ul>
+                    <p>Você pode gerenciar ou desabilitar cookies nas configurações do seu navegador.</p>
+                </section>
+
+                <hr class="divider">
+
+                <section id="s9">
+                    <h2><span class="section-num">9</span> Links Externos</h2>
+                    <p>
+                        Este site pode conter links para páginas externas (redes sociais, parceiros institucionais).
+                        O CRC-ES não se responsabiliza pelas práticas de privacidade adotadas nesses sites. Recomendamos
+                        a leitura das respectivas políticas de privacidade ao acessá-los.
+                    </p>
+                </section>
+
+                <hr class="divider">
+
+                <section id="s10">
+                    <h2><span class="section-num">10</span> Alterações desta Política</h2>
+                    <p>
+                        Esta Política de Privacidade pode ser atualizada periodicamente. Sempre que houver alterações
+                        relevantes, publicaremos a nova versão nesta página com a data de revisão atualizada. O uso
+                        continuado do site ou do formulário de inscrição após as alterações implica a aceitação da
+                        versão vigente.
+                    </p>
+                </section>
+
+                <hr class="divider">
+
+                <section id="s11">
+                    <h2><span class="section-num">11</span> Contato</h2>
+                    <p>Dúvidas, solicitações ou reclamações relacionadas ao tratamento dos seus dados pessoais podem
+                        ser enviadas para:</p>
+                    <ul>
+                        <li><strong>Organização:</strong> Comissão Estadual da Mulher Profissional da Contabilidade CRC/ES</li>
+                        <li><strong>E-mail:</strong>
+                            <a href="mailto:comissaomulhercrces@gmail.com">comissaomulhercrces@gmail.com</a>
+                        </li>
+                        <li><strong>Site institucional:</strong>
+                            <a href="https://crc-es.org.br" target="_blank" rel="noopener noreferrer">crc-es.org.br</a>
+                        </li>
+                        <li><strong>Instagram CRC Mulher:</strong>
+                            <a href="https://www.instagram.com/crcmulheres/" target="_blank" rel="noopener noreferrer">@crcmulheres</a>
+                        </li>
+                    </ul>
+                    <p>Você também tem o direito de apresentar reclamação à <strong>Autoridade Nacional de Proteção de
+                        Dados (ANPD)</strong>: <a href="https://www.gov.br/anpd" target="_blank"
+                        rel="noopener noreferrer">www.gov.br/anpd</a>.</p>
+                </section>
+
+            </article>
+        </div>
+
+        <!-- Links de navegação entre documentos legais -->
+        <div class="container" style="max-width: 1100px; margin-top: 48px; text-align: center;">
+            <p style="color: var(--color-text-light); margin-bottom: 16px; font-size: 0.9rem;">Veja também:</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="termos-de-uso.html" class="btn btn-secondary">
+                    <i class="fa-solid fa-file-contract" style="margin-right: 8px;"></i>Termos de Uso
+                </a>
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fa-solid fa-arrow-left" style="margin-right: 8px;"></i>Voltar ao Início
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>CRC Mulher ES</h3>
+                <p>Promovendo conexões e a valorização da mulher profissional da contabilidade no Espírito Santo.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Links Rápidos</h4>
+                <a href="index.html">Início</a>
+                <a href="index.html#programacao">Programação</a>
+                <a href="index.html#ingressos">Inscrição</a>
+                <a href="politica-de-privacidade.html">Política de Privacidade</a>
+                <a href="termos-de-uso.html">Termos de Uso</a>
+            </div>
+            <div class="footer-social">
+                <h4>Siga-nos</h4>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/crcesoficial/" target="_blank" class="social-link">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>@crcesoficial</span>
+                    </a>
+                    <a href="https://www.instagram.com/crcmulheres/" target="_blank" class="social-link">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>@crcmulheres</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container"
+                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+                <p style="margin: 0;">&copy; 2026 Comissão da Mulher CRC/ES. Todos os direitos reservados.</p>
+                <div style="display: flex; align-items: center; gap: 8px; justify-content: center;">
+                    <span style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.5);">Desenvolvido por</span>
+                    <a href="https://www.instagram.com/moniquecoelho.tech" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/images/logo-neeko.png" alt="Neeko"
+                            style="height: 24px; filter: brightness(0) invert(1); opacity: 0.7; transition: var(--transition);"
+                            onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

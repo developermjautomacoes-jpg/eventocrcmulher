@@ -167,5 +167,168 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ===================== Carrossel de Palestrantes =====================
+    (function initCarousel() {
+        const track      = document.getElementById('carousel-track');
+        const viewport   = document.getElementById('speakers-carousel');
+        const btnPrev    = document.getElementById('carousel-prev');
+        const btnNext    = document.getElementById('carousel-next');
+        const dotsWrap   = document.getElementById('carousel-dots');
+
+        if (!track || !viewport || !btnPrev || !btnNext || !dotsWrap) return;
+
+        const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+        const GAP = 32; // deve bater com o gap do CSS
+        let currentIndex = 0;
+        let autoplayTimer = null;
+
+        // Quantos slides cabem por vez (responsivo)
+        function getSlidesPerView() {
+            const vw = window.innerWidth;
+            if (vw <= 640)  return 1;
+            if (vw <= 1024) return 2;
+            return 3;
+        }
+
+        // Define a largura de cada slide com base no viewport real
+        function setSlideSizes() {
+            const perView    = getSlidesPerView();
+            const viewWidth  = viewport.clientWidth;
+            const slideWidth = (viewWidth - GAP * (perView - 1)) / perView;
+            slides.forEach(s => {
+                s.style.width = slideWidth + 'px';
+            });
+        }
+
+        // Gera as bolinhas
+        function buildDots() {
+            dotsWrap.innerHTML = '';
+            const perView  = getSlidesPerView();
+            const maxIndex = Math.max(0, slides.length - perView);
+            const dotCount = maxIndex + 1;
+            for (let i = 0; i <= maxIndex; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', `Palestrante ${i + 1}`);
+                dot.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(dot);
+            }
+        }
+
+        // Atualiza estado visual
+        function updateState() {
+            const perView    = getSlidesPerView();
+            const maxIndex   = Math.max(0, slides.length - perView);
+            currentIndex     = Math.max(0, Math.min(currentIndex, maxIndex));
+
+            const slideWidth = slides[0].offsetWidth;
+            const offset     = (slideWidth + GAP) * currentIndex;
+            track.style.transform = `translateX(-${offset}px)`;
+
+            // Setas
+            btnPrev.disabled = currentIndex === 0;
+            btnNext.disabled = currentIndex >= maxIndex;
+
+            // Bolinhas
+            dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => {
+                d.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        function goTo(index) {
+            currentIndex = index;
+            updateState();
+        }
+
+        function next() {
+            const perView  = getSlidesPerView();
+            const maxIndex = Math.max(0, slides.length - perView);
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateState();
+            }
+        }
+
+        function prev() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateState();
+            }
+        }
+
+        btnNext.addEventListener('click', () => { next(); resetAutoplay(); });
+        btnPrev.addEventListener('click', () => { prev(); resetAutoplay(); });
+
+        // Autoplay suave (avança de 4 em 4 segundos)
+        function startAutoplay() {
+            autoplayTimer = setInterval(() => {
+                const perView  = getSlidesPerView();
+                const maxIndex = Math.max(0, slides.length - perView);
+                if (currentIndex >= maxIndex) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex++;
+                }
+                updateState();
+            }, 4000);
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplayTimer);
+            startAutoplay();
+        }
+
+        // Pausar autoplay ao hover
+        viewport.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+        viewport.addEventListener('mouseleave', startAutoplay);
+
+        // Suporte a Touch / Swipe
+        let touchStartX = 0;
+        let touchEndX   = 0;
+        const SWIPE_THRESHOLD = 50;
+
+        viewport.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].clientX;
+        }, { passive: true });
+
+        viewport.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].clientX;
+            const delta = touchStartX - touchEndX;
+            if (Math.abs(delta) > SWIPE_THRESHOLD) {
+                delta > 0 ? next() : prev();
+                resetAutoplay();
+            }
+        }, { passive: true });
+
+        // Suporte a teclado (← →) quando o carrossel está em foco
+        viewport.setAttribute('tabindex', '0');
+        viewport.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') { next(); resetAutoplay(); }
+            if (e.key === 'ArrowLeft')  { prev(); resetAutoplay(); }
+        });
+
+        // Recalcular ao redimensionar
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                currentIndex = 0;
+                setSlideSizes();
+                buildDots();
+                updateState();
+            }, 200);
+        });
+
+        // Inicializar
+        setSlideSizes();
+        buildDots();
+        updateState();
+        startAutoplay();
+    })();
+
+
 });
+
+
+
 
