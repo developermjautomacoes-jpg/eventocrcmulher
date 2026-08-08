@@ -626,7 +626,100 @@ ul {
     margin-top: 16px;
 }
 
+/* Caravan Highlight Block */
+.caravan-highlight {
+    margin: 4px 0 20px;
+    padding: 9px 12px;
+    background: rgba(180, 50, 120, 0.05);
+    border: 1.5px solid rgba(180, 50, 120, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.caravan-highlight-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+.caravan-highlight p {
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+    margin-bottom: 8px;
+}
+
+.caravan-coupon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.coupon-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-text-light);
+}
+
+.coupon-code {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--color-white);
+    background: var(--color-primary);
+    padding: 5px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: all;
+    transition: var(--transition);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.coupon-code:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.copy-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    background: transparent;
+    border: 1.5px solid var(--color-primary);
+    border-radius: 6px;
+    color: var(--color-primary);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.copy-btn:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.copy-btn.copied {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: #fff;
+}
+
 /* Footer */
+
 .footer {
     background-color: var(--color-primary-dark);
     color: var(--color-white);
@@ -1269,5 +1362,42 @@ ul {
     .speakers-carousel-wrapper {
         gap: 8px;
         padding: 0;
+    }
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+/* Responsividade adicional para WhatsApp no Mobile */
+@media (max-width: 640px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
     }
 }

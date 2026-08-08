@@ -168,7 +168,7 @@
                             <p>Na Era da Reforma Tributária. Desafios e posicionamento em cada área.</p>
                             <div class="speakers">
                                 <strong>Dep. Pessoal:</strong> Ariane |
-                                <!-- <strong>Fiscal:</strong> Thabata | -->
+                                <strong>Fiscal:</strong> Brenda Proeza |
                                 <strong>Contábil:</strong> Stephani Kalynka <br>
                                 <strong>Mediação:</strong> Karina
                             </div>
@@ -325,12 +325,12 @@
                             </a>
                         </div>
 
-                        <!-- Card 4 – AGUARDANDO FOTO (descomentar quando receber)
+                        <!-- Card 4 -  -->
                         <div class="carousel-slide">
-                            <a href="palestrantes.html" class="card speaker-card"
+                            <a href="palestrantes.html#stephanie-kalynka" class="card speaker-card"
                                 style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
                                 <div class="speaker-img-container">
-                                    <img src="assets/images/palestrantes/em_breve.jpg" alt="Stephanie Kalynka" class="speaker-img">
+                                    <img src="assets/images/palestrantes/Sthefane Kalinka.jpg" alt="Stephanie Kalynka" class="speaker-img">
                                 </div>
                                 <h3>Stephanie Kalynka</h3>
                                 <p>Veja seu perfil profissional</p>
@@ -350,6 +350,20 @@
                                 <p>Veja seu perfil profissional</p>
                             </a>
                         </div>
+
+                        <!-- Card 6 -->
+                        <div class="carousel-slide">
+                            <a href="palestrantes.html#jack-pontual" class="card speaker-card"
+                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+                                <div class="speaker-img-container">
+                                    <img src="assets/images/palestrantes/Jacke Pontual.jpeg" 
+                                        alt="Jack Pontual" class="speaker-img">
+                                </div>
+                                <h3>Jack Pontual</h3>
+                                <p>Veja seu perfil profissional</p>
+                            </a>
+                        </div>
+
 
                         <!-- Cards 6 a 12 – AGUARDANDO FOTO (descomentar quando receber)
 
@@ -379,18 +393,7 @@
 
                   
 
-                        Card 9 – Jack Pontual
-                        <div class="carousel-slide">
-                            <a href="palestrantes.html#jack-pontual" class="card speaker-card"
-                                style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
-                                <div class="speaker-img-container">
-                                    <img src="assets/images/palestrantes/em_breve.jpg" alt="Jack Pontual" class="speaker-img">
-                                </div>
-                                <h3>Jack Pontual</h3>
-                                <p>Veja seu perfil profissional</p>
-                            </a>
-                        </div>
-
+                        
                         Card 10 – Kalyne
                         <div class="carousel-slide">
                             <a href="palestrantes.html#kalyne" class="card speaker-card"
@@ -544,7 +547,7 @@
 
             <div class="cards-grid">
                 <!-- Ticket 24 -->
-                <div class="card ticket-card featured fade-in">
+                <div class="card ticket-card featured fade-in" style="display:flex; flex-direction:column;">
                     <div class="ticket-badge">Vagas Limitadas</div>
                     <div class="ticket-header">
                         <h3>Dia 24 - Jantar</h3>
@@ -558,7 +561,7 @@
                         <li><i data-lucide="check"></i> Palestra Posicionamento</li>
                         <li><i data-lucide="check"></i> Ambiente intimista</li>
                     </ul>
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: auto;">
                         <a href="https://www.sympla.com.br/evento/10-encontro-estadual-da-mulher-profissional-contabilista---jantar-de-networking/3505956"
                             target="_blank" class="btn btn-primary w-100">
                             <i data-lucide="credit-card" style="width:16px;height:16px;margin-right:6px;"></i> Cartão de
@@ -572,27 +575,54 @@
                 </div>
 
                 <!-- Ticket 25 -->
-                <div class="card ticket-card fade-in">
+                <div class="card ticket-card featured fade-in" style="display:flex; flex-direction:column;">
                     <div class="ticket-header">
                         <h3>Dia 25 - Imersão</h3>
                         <p>Profissionais Contábeis</p>
                     </div>
+
+                    <!-- Preço -->
                     <div class="ticket-price">
                         <span class="currency">R$</span>60<span class="cents">,00</span>
                     </div>
                     <p class="ticket-condition">+ 1 Pacote de Absorvente</p>
+
+                    <!-- Benefícios -->
                     <ul class="ticket-features">
                         <li><i data-lucide="check"></i> Acesso aos 5 blocos</li>
                         <li><i data-lucide="check"></i> Coffee Break</li>
                         <li><i data-lucide="check"></i> Certificado de Participação</li>
                     </ul>
-                    <a href="https://www.sympla.com.br/evento/10-encontro-estadual-da-mulher-profissional-contabilista/3495469"
-                        target="_blank" class="btn btn-primary w-100">Comprar Ingresso</a>
+
+                    <!-- Desconto Caravana -->
+                    <div class="caravan-highlight">
+                        <div class="caravan-highlight-header">
+                            <i data-lucide="users-2" style="width:16px;height:16px;"></i>
+                            <span>Desconto para Grupos +10 pessoas</span>
+                        </div>
+                        <p>Use o cupom abaixo ao finalizar a compra na plataforma:</p>
+                        <div class="caravan-coupon">
+                            <span class="coupon-code" id="coupon-caravana5" title="Clique para copiar">CARAVANA5</span>
+                            <button class="copy-btn" onclick="copyCoupon()" title="Copiar cupom">
+                                <i data-lucide="copy" style="width:15px;height:15px;"></i>
+                                <span id="copy-label">Copiar</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div style="margin-top: auto;">
+                        <a href="https://www.sympla.com.br/evento/10-encontro-estadual-da-mulher-profissional-contabilista/3495469"
+                            target="_blank" class="btn btn-primary w-100">Comprar Ingresso</a>
+                        <p class="ticket-note" style="margin-top: 10px;">Escolha o tipo de ingresso (Individual ou Caravana) na plataforma.</p>
+                    </div>
 
                 </div>
             </div>
+
         </div>
     </section>
+
 
     <!-- Patrocinadores 
     <section id="patrocinadores" class="section sponsors-section bg-light">
@@ -728,8 +758,36 @@
 
     <script>
         lucide.createIcons();
+
+        function copyCoupon() {
+            const code = document.getElementById('coupon-caravana5').textContent;
+            navigator.clipboard.writeText(code).then(function () {
+                const btn = document.querySelector('.copy-btn');
+                const label = document.getElementById('copy-label');
+                btn.classList.add('copied');
+                label.textContent = 'Copiado!';
+                setTimeout(function () {
+                    btn.classList.remove('copied');
+                    label.textContent = 'Copiar';
+                }, 2500);
+            }).catch(function () {
+                // Fallback para browsers sem clipboard API
+                const el = document.getElementById('coupon-caravan5');
+                const range = document.createRange();
+                range.selectNode(el);
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
+                document.execCommand('copy');
+                window.getSelection().removeAllRanges();
+            });
+        }
     </script>
     <script src="assets/js/script.js"></script>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/message/JJF6CGARR23AE1" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp" title="Converse com Dani Dornelas Contadora no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 </body>
 
 </html>
