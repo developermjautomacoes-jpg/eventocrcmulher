@@ -64,12 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const formPix = document.getElementById('form-pix');
     const btnSubmit = document.getElementById('btn-pix-submit');
 
-    // Abrir modal
-    btnAbrirPix.addEventListener('click', () => {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        document.getElementById('pix-nome').focus();
-    });
+    if (btnAbrirPix && !btnAbrirPix.disabled) {
+        // Abrir modal
+        btnAbrirPix.addEventListener('click', () => {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('pix-nome').focus();
+        });
+    }
 
     // Fechar modal
     function fecharModal() {
