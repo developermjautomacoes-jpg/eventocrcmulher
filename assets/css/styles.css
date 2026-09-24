@@ -610,16 +610,16 @@ ul {
 
 .ticket-features {
     text-align: left;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     border-top: 1px solid var(--color-border);
-    padding-top: 24px;
+    padding-top: 18px;
 }
 
 .ticket-features li {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     color: var(--color-text-light);
 }
 
@@ -637,8 +637,8 @@ ul {
 
 /* Caravan Highlight Block */
 .caravan-highlight {
-    margin: 4px 0 20px;
-    padding: 9px 12px;
+    margin: 0 0 12px;
+    padding: 7px 8px;
     background: rgba(180, 50, 120, 0.05);
     border: 1.5px solid rgba(180, 50, 120, 0.2);
     border-radius: 8px;
@@ -650,26 +650,40 @@ ul {
     align-items: center;
     justify-content: center;
     gap: 5px;
-    font-size: 0.72rem;
+    font-size: 0.64rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     color: var(--color-primary);
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
-.caravan-highlight p {
-    font-size: 0.78rem;
+.coupon-grid {
+    display: grid;
+    gap: 6px;
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+.coupon-item {
+    display: grid;
+    gap: 4px;
+    width: 100%;
+}
+
+.coupon-caption {
+    font-size: 0.62rem;
+    font-weight: 700;
     color: var(--color-text-light);
-    margin-bottom: 8px;
 }
 
 .caravan-coupon {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 6px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .coupon-label {
@@ -681,13 +695,16 @@ ul {
 }
 
 .coupon-code {
+    min-width: 110px;
+    max-width: 150px;
+    text-align: center;
     font-family: 'Courier New', monospace;
-    font-size: 1rem;
+    font-size: 0.78rem;
     font-weight: 800;
-    letter-spacing: 2px;
+    letter-spacing: 1.1px;
     color: var(--color-white);
     background: var(--color-primary);
-    padding: 5px 14px;
+    padding: 4px 8px;
     border-radius: 6px;
     cursor: pointer;
     user-select: all;
@@ -703,14 +720,14 @@ ul {
 .copy-btn {
     display: flex;
     align-items: center;
-    gap: 5px;
-    padding: 5px 12px;
+    gap: 4px;
+    padding: 4px 9px;
     background: transparent;
     border: 1.5px solid var(--color-primary);
     border-radius: 6px;
     color: var(--color-primary);
     font-family: inherit;
-    font-size: 0.8rem;
+    font-size: 0.72rem;
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
@@ -888,31 +905,83 @@ ul {
 }
 
 /* Patrocinadores */
+.sponsors-group {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.sponsor-group-title {
+    margin: 0 0 16px;
+    color: var(--color-primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 .sponsors-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 220px);
+    gap: 24px;
     align-items: center;
-    gap: 48px;
-    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sponsors-grid-master {
+    display: grid;
+    grid-template-columns: repeat(2, 220px);
+    gap: 24px;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .sponsor-item {
+    position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 16px;
-}
-
-.sponsor-item img {
-    max-width: 200px;
-    height: auto;
-    object-fit: contain;
-    filter: grayscale(100%);
+    justify-content: center;
+    width: 220px;
+    min-height: 120px;
+    height: 120px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
     transition: var(--transition);
 }
 
+.sponsor-item-master {
+    width: 220px;
+    min-height: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, rgba(180, 120, 160, 0.10), rgba(255, 255, 255, 0.8));
+    border-color: rgba(180, 120, 160, 0.7);
+    box-shadow: 0 12px 24px rgba(180, 120, 160, 0.08);
+}
+
+.sponsor-item img {
+    width: 100%;
+    max-width: 180px;
+    height: 82px;
+    object-fit: contain;
+    filter: none;
+    transition: var(--transition);
+}
+
+.sponsor-item-master img {
+    max-width: 180px;
+    height: 82px;
+    filter: none;
+}
+
+.sponsor-item:hover {
+    border-color: var(--color-secondary-light);
+    transform: translateY(-4px);
+}
+
 .sponsor-item:hover img {
-    filter: grayscale(0%);
+    filter: none;
 }
 
 .sponsor-item span {
